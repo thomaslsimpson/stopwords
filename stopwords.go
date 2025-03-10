@@ -143,3 +143,78 @@ func removeStopWords(content []byte, dict map[string]string) []byte {
 	}
 	return result
 }
+
+
+func getLangCodeDict(langCode string) map[string]string {
+	switch langCode {
+	case "ar":
+		return arabic
+	case "bg":
+		return bulgarian
+	case "cs":
+		return czech
+	case "da":
+		return danish
+	case "de":
+		return german
+	case "el":
+		return greek
+	case "en":
+		return english
+	case "es":
+		return spanish
+	case "fa":
+		return persian
+	case "fr":
+		return french
+	case "fi":
+		return finnish
+	case "hu":
+		return hungarian
+	case "id":
+		return indonesian
+	case "it":
+		return italian
+	case "ja":
+		return japanese
+	case "km":
+		return khmer
+	case "lv":
+		return latvian
+	case "nl":
+		return dutch
+	case "no":
+		return norwegian
+	case "pl":
+		return polish
+	case "pt":
+		return portuguese
+	case "ro":
+		return romanian
+	case "ru":
+		return russian
+	case "sk":
+		return slovak
+	case "sv":
+		return swedish
+	case "th":
+		return thai
+	case "tr":
+		return turkish
+	}
+
+  return nil
+}
+
+
+func GetWords(langCode string) []string {
+  wordMap := getLangCodeDict(langCode)
+  var result []string
+  for key := range wordMap {
+    result = append(result, key)
+  }
+  return result
+}
+
+
+
